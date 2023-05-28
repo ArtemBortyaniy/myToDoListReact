@@ -12,7 +12,10 @@ export class App extends Component {
 
   componentDidMount = () => {
     const tasks = localStorage.getItem('tasks');
-    const parsetTasks = JSON.parse(tasks);
+    let parsetTasks = JSON.parse(tasks);
+    if(parsetTasks === null) {
+      parsetTasks = [];
+    }
 
     this.setState({tasks : parsetTasks});
   }
@@ -48,16 +51,16 @@ export class App extends Component {
   };
 
   render () {
-  const { tasks } = this.state;
-
+    const { tasks } = this.state;
+    console.log(tasks);
     return (
         <div>
           <Section title={'My to do list'} type={'h1'}>
               <Form onSubmit={this.handleAddTask}></Form>
           </Section>
-          <Section>
+          {tasks.length !== 0 ? <Section>
               <ListTasks tasks={tasks} onCheckboxChange={this.handleUpdatedTasks}></ListTasks>
-          </Section>
+          </Section> : ''}
         </div>
     );
   }
