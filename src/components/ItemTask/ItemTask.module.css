@@ -1,0 +1,31 @@
+.item {
+    display: flex;
+    align-items: center;
+    background: hsla(0, 89%, 39%, 1);
+    background: linear-gradient(90deg, hsla(0, 89%, 39%, 1) 0%, hsla(235, 74%, 46%, 1) 65%);
+    background: -moz-linear-gradient(90deg, hsla(0, 89%, 39%, 1) 0%, hsla(235, 74%, 46%, 1) 65%);
+    background: -webkit-linear-gradient(90deg, hsla(0, 89%, 39%, 1) 0%, hsla(235, 74%, 46%, 1) 65%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BB0B0B", endColorstr="#1F2ECE", GradientType=1 );
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.task {
+    font-weight: 500;
+    font-size: 17px;
+    margin-right: 7px;
+    color: white;
+}
+
+.btnDelete {
+    border: none;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}

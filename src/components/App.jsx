@@ -10,6 +10,20 @@ export class App extends Component {
     tasks : [],
   }
 
+  componentDidMount = () => {
+    const tasks = localStorage.getItem('tasks');
+    const parsetTasks = JSON.parse(tasks);
+
+    this.setState({tasks : parsetTasks});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { tasks } = this.state;
+    if(prevState.tasks !== tasks) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }
+
   handleAddTask = ({task}) => {
     const id = nanoid();
     const completed = false;
@@ -29,7 +43,7 @@ export class App extends Component {
     }));
   }
 
-  handleCheckboxChange = (updatedTasks) => {
+  handleUpdatedTasks = (updatedTasks) => {
     this.setState({ tasks: updatedTasks });
   };
 
@@ -42,7 +56,7 @@ export class App extends Component {
               <Form onSubmit={this.handleAddTask}></Form>
           </Section>
           <Section>
-              <ListTasks tasks={tasks} onCheckboxChange={this.handleCheckboxChange}></ListTasks>
+              <ListTasks tasks={tasks} onCheckboxChange={this.handleUpdatedTasks}></ListTasks>
           </Section>
         </div>
     );

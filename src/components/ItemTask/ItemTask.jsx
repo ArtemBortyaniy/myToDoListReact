@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import css from './ItemTask.module.css';
+import { ReactComponent as DeleteIcon } from "../../icons/delete.svg";
 
 export class ItemTask extends Component {
     handleCheckboxChange = () => {
@@ -11,18 +13,24 @@ export class ItemTask extends Component {
 
         return (
             <li>
-                <div>
+                <div className={css.item}>
                     <input 
                         type="checkbox"
                         name='completed'
                         checked={tasks.completed}
                         onChange={this.handleCheckboxChange}
+                        className={css.input}
                     />
                     <p
-                    style={{textDecoration: tasks.completed ? "line-through" : "none",}}>
+                    style={{textDecoration: tasks.completed ? "line-through" : "none",}} className={css.task}>
                         {tasks.task}
                     </p>
-                    <button type="button" onClick={() => onDelete(tasks.id)}>Delete</button>
+                    <DeleteIcon 
+                        width='25px' 
+                        height='25px' 
+                        onClick={() => onDelete(tasks.id)}
+                        fill="white"
+                    />
                 </div>
             </li>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import css from './Form.module.css'
 
 export class Form extends Component {
     state = {
@@ -26,15 +27,20 @@ export class Form extends Component {
         const { task } = this.state;
 
         return (
-            <div>
-                <form onSubmit={this.handleSubmitForm}>
+            <div className={css.container}>
+                <form onSubmit={this.handleSubmitForm} className={css.form}>
                   <div>
-                    <label htmlFor="task">
-                        <input type="text" name="task" value={task} onChange={this.handleChange}/>
+                    <label htmlFor="task" className={css.label}>
+                        <input type="text"
+                            name="task" 
+                            value={task}
+                            onChange={this.handleChange} 
+                            className={css.input}
+                        />
                     </label>
                   </div>
                   <div>
-                    <button type="submit">Add task</button>
+                    <button type="submit" className={css.btnSubmit}>Add task</button>
                   </div>
                 </form>
             </div>

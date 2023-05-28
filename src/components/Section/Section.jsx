@@ -1,7 +1,9 @@
+import css from './Section.module.css'
+
 export const Section = ({ title, type: Type = 'div', children }) =>{   
     return (
-        <section>
-            <Type>{title}</Type>
+        <section className={css.section}>
+            <Type className={css.title}>{title}</Type>
             <div>
                 {children}
             </div>

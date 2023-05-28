@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import url('normalize.css');
 
 body {
   margin: 0;
@@ -10,8 +10,7 @@ body {
 
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  min-width: 250px;
-
+  background-image: linear-gradient(270deg, #ea9d38 0, #f09237 8.33%, #f48738 16.67%, #f7793a 25%, #f96b3d 33.33%, #fa5a41 41.67%, #f94646 50%, #f72d4c 58.33%, #f40054 66.67%, #f0005d 75%, #eb0068 83.33%, #e40073 91.67%, #dc0080 100%);
 }
 
 code {
