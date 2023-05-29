@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import css from './ItemTask.module.css';
+import css from './ItemTask.module.scss';
 import { ReactComponent as DeleteIcon } from "../../icons/delete.svg";
 
 export class ItemTask extends Component {

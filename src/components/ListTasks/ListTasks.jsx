@@ -1,6 +1,6 @@
 import { ItemTask } from "components/ItemTask/ItemTask";
 import React, { Component } from "react";
-import css from './ListTasks.module.css'
+import css from './ListTasks.module.scss'
 
 export class ListTasks extends Component {
     handleCheckboxChange = (id) => {
