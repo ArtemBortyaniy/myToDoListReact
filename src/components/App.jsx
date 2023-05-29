@@ -13,6 +13,7 @@ export class App extends Component {
   componentDidMount = () => {
     const tasks = localStorage.getItem('tasks');
     let parsetTasks = JSON.parse(tasks);
+
     if(parsetTasks === null) {
       parsetTasks = [];
     }
@@ -58,9 +59,9 @@ export class App extends Component {
           <Section title={'My to do list'} type={'h1'}>
               <Form onSubmit={this.handleAddTask}></Form>
           </Section>
-          {tasks.length !== 0 ? <Section>
+          <Section>
               <ListTasks tasks={tasks} onCheckboxChange={this.handleUpdatedTasks}></ListTasks>
-          </Section> : ''}
+          </Section>
         </div>
     );
   }
