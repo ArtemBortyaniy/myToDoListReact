@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import css from './Form.module.css'
+import css from './Form.module.scss'
 
 export class Form extends Component {
     state = {
